@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::get('/getLogin', 'UtilisateurController@getLogin');
 
 // Réponse au clic sur le bouton Valider du formulaire formLogin
-
+Route::post('/signIn', 'UtilisateurController@signIn');
 // Déloguer le propriétaire
 
 
