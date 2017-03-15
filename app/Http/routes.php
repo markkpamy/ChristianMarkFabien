@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 // Afficher le formulaire d'authentification 
+Route::get('/getLogin', 'UtilisateurController@getLogin');
 
 // Réponse au clic sur le bouton Valider du formulaire formLogin
 
