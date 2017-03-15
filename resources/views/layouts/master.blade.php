@@ -30,7 +30,7 @@
                         <ul class="nav navbar-nav">                           
                             <li><a href="/* A compléter */" data-toggle="collapse" data-target=".navbar-collapse.in">Lister</a></li>
                             <li><a href="/* A compléter */" data-toggle="collapse" data-target=".navbar-collapse.in">Ajouter</a></li>
-                            <li><a href="/* A compléter */"data-toggle="collapse" data-target=".navbar-collapse.in">Réservations</a></li>                       
+                            <li><a href="/* A compléter */" data-toggle="collapse" data-target=".navbar-collapse.in">Réservations</a></li>
                         </ul>  
                         <ul class="nav navbar-nav navbar-right">                             
                             <li><a href="/* A compléter */" data-toggle="collapse" data-target=".navbar-collapse.in">Se déconnecter</a></li>
@@ -41,11 +41,20 @@
             </nav>
         </div> 
         <div class="container">
+<<<<<<< HEAD
             @yield('content')
         </div>
             {!! Html::script('assets/js/bootstrap.min.js') !!}
             {!! Html::script('assets/js/jquery-2.1.3.min.js') !!}
             {!! Html::script('assets/js/ui-bootstrap-tpls.js') !!}
             {!! Html::script('assets/js/bootstrap.js') !!}
+=======
+             @yield('content')
+        </div>
+        {!! Html::script('assets/js/bootstrap.min.js') !!}
+        {!! Html::script('assets/js/jquery-2.1.3.min.js') !!}
+        {!! Html::script('assets/js/ui-bootstrap-tpls.js') !!}
+        {!! Html::script('assets/js/bootstrap.js') !!}
+>>>>>>> master
     </body>
 </html>
