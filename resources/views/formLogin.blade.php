@@ -1,5 +1,5 @@
- /* A compléter */
- /* A compléter */  
+@extends('layouts.master')
+@section('content')
 <div class="col-md-12 well well-md">
     <center><h1>Authentification</h1></center>
     <div class="form-horizontal">    
@@ -21,10 +21,10 @@
             </div>
         </div>
         <div class="col-md-6 col-md-offset-3">
-             /* A compléter */
+            @include('error')
         </div>
     </div>
 </div>
- /* A compléter */
- /* A compléter */
+{!! Form::close() !!}
+@stop
 

@@ -41,20 +41,11 @@
             </nav>
         </div> 
         <div class="container">
-<<<<<<< HEAD
-            @yield('content')
-        </div>
-            {!! Html::script('assets/js/bootstrap.min.js') !!}
-            {!! Html::script('assets/js/jquery-2.1.3.min.js') !!}
-            {!! Html::script('assets/js/ui-bootstrap-tpls.js') !!}
-            {!! Html::script('assets/js/bootstrap.js') !!}
-=======
              @yield('content')
         </div>
         {!! Html::script('assets/js/bootstrap.min.js') !!}
         {!! Html::script('assets/js/jquery-2.1.3.min.js') !!}
         {!! Html::script('assets/js/ui-bootstrap-tpls.js') !!}
         {!! Html::script('assets/js/bootstrap.js') !!}
->>>>>>> master
     </body>
 </html>
