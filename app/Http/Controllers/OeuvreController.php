@@ -32,6 +32,6 @@ class OeuvreController extends Controller
         $proprietaires = $proprietaire->getProprietaire();
         $titreVue = "Modification d'une Oeuvre";
         //Affiche le formulaire en lui fournissant les données à afficher
-        return view('formOeuvre', compact('oeuvre','proprietaires','titreVue'));
+        return view('formOeuvre', compact('oeuvre','proprietaires','titreVue','erreur'));
     }
 }

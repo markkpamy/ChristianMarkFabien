@@ -1,16 +1,16 @@
-@extends('layouts.master)
+@extends('layouts.master')
 @section('content')
-    {!! Form::open(['url' => 'validerOeuvres', 'files' => true]) !!}
+    {!! Form::open(['url' => 'validerOeuvre', 'files' => true]) !!}
 <div class="col-md-12 well well-sm">
-    {{print_r($oeuvre)}}
+
     <center><h1>{{$titreVue or ''}}</h1></center>
     <div class="form-horizontal">    
         <div class="form-group">
-            <input type="hidden" name="id_oeuvre" value="{{$oeuvre->id_oeuvre}}"/>
+            <input type="hidden" name="id_oeuvre" value="{{$oeuvre->id_oeuvre or ''}}"/>
             <label class="col-md-3 control-label">Titre : </label>
             <div class="col-md-3">
-                <input type="text" name="titre" 
-                    value="{{$oeuvre->Titre}}" class="form-control" required autofocus>
+                <input type="text" name="titre"
+                    value="{{$oeuvre->Titre or ''}}" class="form-control" required autofocus>
             </div>
         </div>
         <div class="form-group">
@@ -19,13 +19,11 @@
                 <select class='form-control' name='cbProprietaire' required>
                     <OPTION VALUE=0>Sélectionner un proprietaire</option>
                     @foreach ($proprietaires as $proprietaire)
-                        selected=""
                         <option value="{{$proprietaire->id_proprietaire}}"
-                                @if($proprietaire->id_proprietaire == $oeuvre->id_proprietaire)
-                                selected
+                                @if($proprietaire->id_proprietaire==$oeuvre->id_proprietaire)
+                                    selected
                                 @endif
-                        >{{$oeuvre->nom_proprietaire}}
-                        </option>
+                        >{{$proprietaire->nom_proprietaire}}</option>
                     @endforeach
                 </select>
             </div>
@@ -33,7 +31,7 @@
         <div class="form-group">
             <label class="col-md-3 control-label">Prix : </label>
             <div class="col-md-3">
-                <input type="text" name="prix" value="{{$oeuvre->prix}}" class="form-control"  required>
+                <input type="text" name="prix" value="{{$oeuvre->prix or ''}}" class="form-control"  required>
             </div>
         </div>
         <div class="form-group">
@@ -53,5 +51,5 @@
         </div>        
     </div>
 </div>
- {!! Form::close !!}
+ {{--{!! Form::close !!}--}}
 @stop
