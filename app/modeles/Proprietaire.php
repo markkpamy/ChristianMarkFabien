@@ -25,4 +25,13 @@ class Proprietaire extends Model
     public function logout(){
         Session::forget('id');
     }
+
+    /**
+     * Liste les propriétaires
+     * @return Collection Proprietaire
+     */
+    public function getProprietaire(){
+        $proprietaires = DB::table('proprietaire')->get();
+        return $proprietaires;
+    }
 }
