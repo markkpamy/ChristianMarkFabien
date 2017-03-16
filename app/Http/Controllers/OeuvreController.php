@@ -78,4 +78,14 @@ class OeuvreController extends Controller
         //On reaffiche la listes des oeuvres
         return redirect('/listerOeuvres');
     }
+
+    public function deleteOeuvre($id, $erreur=""){
+        $oeuvre = new Oeuvre();
+        try{
+            $oeuvre->deleteOeuvre($id);
+        }catch (Exception $ex){
+            $erreur = $ex;
+        }
+        return redirect('/listerOeuvres');
+    }
 }

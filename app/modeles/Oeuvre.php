@@ -71,4 +71,18 @@ class Oeuvre extends Model
             throw $ex;
         }
     }
+
+    /**
+     * Suppression d'une Oeuvre
+     * @param $idOeuvre
+     * @throws \Exception
+     */
+    public function deleteOeuvre($idOeuvre){
+        try{
+            DB::table('oeuvre')->where('id_oeuvre','=',$idOeuvre)
+                ->delete();
+        } catch (Exception $ex){
+            throw $ex;
+        }
+    }
 }

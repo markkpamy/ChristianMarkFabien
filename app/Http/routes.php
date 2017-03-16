@@ -36,7 +36,7 @@ Route::post('/validerOeuvre','OeuvreController@validateOeuvre');
 Route::get('/ajouterOeuvre','OeuvreController@addOeuvre');
 
 // Supprimer une oeuvre
-
+Route::get('supprimerOeuvre/{id}', 'OeuvreController@deleteOeuvre');
 
 // Afficher la liste des réservations
 
