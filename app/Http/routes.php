@@ -16,12 +16,12 @@ Route::get('/', function () {
 });
 
 // Afficher le formulaire d'authentification 
-Route::get('/getLogin', 'UtilisateurController@getLogin');
+Route::get('/getLogin', 'ProprietaireController@getLogin');
 
 // Réponse au clic sur le bouton Valider du formulaire formLogin
-Route::post('/signIn', 'UtilisateurController@signIn');
+Route::post('/signIn', 'ProprietaireController@signIn');
 // Déloguer le propriétaire
-
+Route::get('/signOut', 'ProprietaireController@signOut');
 
 // Afficher la liste des Oeuvres
 

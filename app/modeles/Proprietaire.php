@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Session;
 use DB;
 
-class Utilisateur extends Model
+class Proprietaire extends Model
 {
     public function login($login, $pwd){
         $connected = false;
@@ -20,5 +20,9 @@ class Utilisateur extends Model
             }
         }
     return $connected;
+    }
+    
+    public function logout(){
+        Session::forget('id');
     }
 }

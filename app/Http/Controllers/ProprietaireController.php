@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 use Request;
-use App\modeles\Utilisateur;
+use App\modeles\Proprietaire;
 
-class UtilisateurController extends Controller
+class ProprietaireController extends Controller
 {
     public function getLogin() {
         $erreur = "";
@@ -14,13 +14,19 @@ class UtilisateurController extends Controller
     public function signIn(){
         $login = Request::input('login');
         $pwd = Request::input('pwd');
-        $utilisateur = new Utilisateur();
-        $connected = $utilisateur -> login ($login, $pwd);
+        $proprietaire = new Proprietaire();
+        $connected = $proprietaire -> login ($login, $pwd);
         if($connected){
             return view ('home');
         } else {
             $erreur = "Login ou mot de passe incorrect !";
             return view ('formLogin', compact ('erreur'));
         }
+    }
+    
+    public function signOut(){
+        $proprietaire = new Proprietaire();
+        $proprietaire->logout();
+        return view('home');
     }
 }
