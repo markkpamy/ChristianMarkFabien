@@ -33,11 +33,11 @@
                 </a>
             </td>                    
         </tr>
-         /* A compléter */
+        @endforeach
         <BR> <BR>
     </table>
     <div class="col-md-6 col-md-offset-3">
-         /* A compléter */
+         @yield('content')
     </div> 
 </div>
 @stop
