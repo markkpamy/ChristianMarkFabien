@@ -28,9 +28,12 @@ Route::get('/listerOeuvres', 'OeuvreController@getOeuvres');
 
 // Afficher un manga pour pouvoir le modifier
 Route::get('/modifierOeuvre/{id}', 'OeuvreController@updateOeuvre');
+
 // Enregistrer la mise à jour d'une oeuvre
+Route::post('/validerOeuvre','OeuvreController@validateOeuvre');
 
 // Afficher le formulaire de saisie d'une nouvelle oeuvre
+Route::get('/ajouterOeuvre','OeuvreController@addOeuvre');
 
 // Supprimer une oeuvre
 

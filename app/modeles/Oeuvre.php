@@ -32,4 +32,43 @@ class Oeuvre extends Model
             ->first();
         return $oeuvre;
     }
+
+    /**
+     * Modification d'une Oeuvre
+     * @param $id_Oeuvre
+     * @param $titre_Oeuvre
+     * @param $prix
+     * @param $proprietaire
+     * @throws \Exception
+     */
+    public function updateOeuvre($id_Oeuvre, $titre_Oeuvre, $prix, $proprietaire){
+        try{
+            DB::table('oeuvre')->where('id_oeuvre','=',$id_Oeuvre)
+                ->update(
+                    ['titre' => $titre_Oeuvre,
+                    'id_proprietaire' => $proprietaire,
+                    'prix' => $prix]
+                );
+        }catch (Exception $ex){
+            throw $ex;
+        }
+    }
+    /**
+     * Insertion d'une oeuvre
+     * @param $titre_oeuvre
+     * @param $proprietaire_oeuvre
+     * @param $prix
+     * @throws \Exception
+     */
+    public function addOeuvre($titre_oeuvre, $proprietaire_oeuvre, $prix){
+        try{
+            DB::table('oeuvre')->insert(
+                ['id_proprietaire'=> $proprietaire_oeuvre,
+                'titre' => $titre_oeuvre,
+                'prix' => $prix]
+            );
+        }catch (Exception $ex){
+            throw $ex;
+        }
+    }
 }
