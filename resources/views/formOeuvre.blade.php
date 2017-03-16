@@ -2,7 +2,6 @@
 @section('content')
     {!! Form::open(['url' => 'validerOeuvre', 'files' => true]) !!}
 <div class="col-md-12 well well-sm">
-
     <center><h1>{{$titreVue or ''}}</h1></center>
     <div class="form-horizontal">    
         <div class="form-group">
@@ -23,7 +22,7 @@
                                 @if($proprietaire->id_proprietaire==$oeuvre->id_proprietaire)
                                     selected
                                 @endif
-                        >{{$proprietaire->nom_proprietaire}}</option>
+                        >{{$proprietaire->prenom_proprietaire}} {{$proprietaire->nom_proprietaire}}</option>
                     @endforeach
                 </select>
             </div>

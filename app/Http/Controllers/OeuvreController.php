@@ -27,7 +27,7 @@ class OeuvreController extends Controller
 
     public function updateOeuvre($id, $erreur=""){
         $laOeuvre = new Oeuvre();
-        $oeuvre = $laOeuvre->getOeuvres($id);
+        $oeuvre = $laOeuvre->getOeuvre($id);
         $proprietaire = new Proprietaire();
         $proprietaires = $proprietaire->getProprietaire();
         $titreVue = "Modification d'une Oeuvre";
