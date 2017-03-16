@@ -2,6 +2,7 @@
 @section('content')
     {!! Form::open(['url' => 'validerOeuvres', 'files' => true]) !!}
 <div class="col-md-12 well well-sm">
+    {{print_r($oeuvre)}}
     <center><h1>{{$titreVue or ''}}</h1></center>
     <div class="form-horizontal">    
         <div class="form-group">
