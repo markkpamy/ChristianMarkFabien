@@ -23,13 +23,13 @@
             <td style="text-align:center;"><a href="{{ url('/reserverOeuvre') }}/{{ $oeuvre -> id_oeuvre }}">
                 <span class="glyphicon glyphicon-book" data-toggle="tooltip" data-placement="top" title="Réserver"></span></a>
             </td>            
-            <td style="text-align:center;"><a href="url('/modifierOeuvre') }}/{{ $oeuvre -> id_oeuvre }}">
+            <td style="text-align:center;"><a href="{{ url('/modifierOeuvre') }}/{{ $oeuvre -> id_oeuvre }}">
                 <span class="glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="top" title="Modifier"></span></a>
             </td>
             <td style="text-align:center;">
                 <a class="glyphicon glyphicon-trash" data-toggle="tooltip" data-placement="top" title="Supprimer" href="#"
                     onclick="javascript:if (confirm('Suppression confirmée ?'))
-                        { window.location=' url('/supprimerOeuvre') }}/{{ $oeuvre -> id_oeuvre }}';}">
+                        { window.location='{{ url('/supprimerOeuvre') }}/{{ $oeuvre -> id_oeuvre }}';}">
                 </a>
             </td>                    
         </tr>
@@ -37,7 +37,7 @@
         <BR> <BR>
     </table>
     <div class="col-md-6 col-md-offset-3">
-         @yield('content')
+        @include('error')
     </div> 
 </div>
 @stop

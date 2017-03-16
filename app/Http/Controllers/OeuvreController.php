@@ -14,6 +14,6 @@ class OeuvreController extends Controller
         $oeuvre = new Oeuvre();
         
         $oeuvres = $oeuvre -> getOeuvres();
-        return view('listeOeuvres', compact('mangas', 'erreur'));
+        return view('listeOeuvres', compact('oeuvres', 'erreur'));
     }
 }
