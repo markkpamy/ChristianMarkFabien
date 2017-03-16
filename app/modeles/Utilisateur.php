@@ -9,13 +9,13 @@ class Utilisateur extends Model
 {
     public function login($login, $pwd){
         $connected = false;
-        $user = DB::table('user')
+        $proprietaire = DB::table('proprietaire')
                 ->select()
                 ->where('login', '=', $login)
                 ->first();
-        if($user){
-            if($user -> pwd == $pwd){
-                Session::put('id', $user->user_id);
+        if($proprietaire){
+            if($proprietaire -> pwd == $pwd){
+                Session::put('id', $proprietaire->id_proprietaire);
                 $connected = true;
             }
         }
