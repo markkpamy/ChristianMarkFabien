@@ -17,9 +17,9 @@
         </thead>
         @foreach($oeuvres as $oeuvre)
         <tr>   
-            <td>  {{ $oeuvre -> id_oeuvre }} </td>
-            <td>  {{ $oeuvre -> titre }}</td>
-            <td>  {{ $oeuvre -> prix }} </td>
+            <td>  {{ $oeuvre -> titre }} </td>
+            <td>  {{ $oeuvre -> prenom_proprietaire }}</td>
+            <td>  {{ $oeuvre -> nom_proprietaire }} </td>
             <td style="text-align:center;"><a href="{{ url('/reserverOeuvre') }}/{{ $oeuvre -> id_oeuvre }}">
                 <span class="glyphicon glyphicon-book" data-toggle="tooltip" data-placement="top" title="Réserver"></span></a>
             </td>            

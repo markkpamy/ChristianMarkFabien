@@ -15,7 +15,7 @@ class Oeuvre extends Model
 
     public function getOeuvres(){
         $oeuvres = DB::table('oeuvre')
-            ->Select('id_oeuvre', 'oeuvre.id_proprietaire', 'titre', 'prix')
+            ->Select('id_oeuvre', 'oeuvre.id_proprietaire','proprietaire.nom_proprietaire','proprietaire.prenom_proprietaire', 'titre', 'prix')
             ->join('proprietaire', 'oeuvre.id_proprietaire', '=','proprietaire.id_proprietaire')
             ->get();
         return $oeuvres;
