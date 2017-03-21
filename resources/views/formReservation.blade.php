@@ -1,5 +1,6 @@
- /* A compléter */
- /* A compléter */  
+@extends('layouts.master')
+@section('content') 
+{!! Form::open(['url' => 'reserverOeuvre', 'files' => true]) !!}
 <div class="col-md-12 well well-sm">
     <center><h1>{{$titreVue or ''}}</h1></center>
     <div class="form-horizontal">    
@@ -19,7 +20,13 @@
             <div class="col-md-3">
                 <select class='form-control' name='cbAdherent' required>
                     <OPTION VALUE=0>Sélectionner un adhérent</option>
-                     /* A compléter */
+                    @foreach ($adherents as $adherent)
+                        <option value="{{$adherent -> id_adherent}}"
+                                @if($adherent -> id_adherent > 0)
+                                    selected
+                                @endif
+                        >{{$adherent->prenom_adherent}} {{$adherent->nom_adherent}}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
@@ -30,15 +37,15 @@
                 </button>
                 &nbsp;
                 <button type="button" class="btn btn-default btn-primary" 
-                    onclick="javascript: window.location = ' /* A compléter */';">
+                    onclick="javascript: window.location = '{{url('/')}}';">
                     <span class="glyphicon glyphicon-remove"></span> Annuler
                 </button>
             </div>           
         </div>
         <div class="col-md-6 col-md-offset-3">
-             /* A compléter */
+             @include('error')
         </div>        
     </div>
 </div>
  /* A compléter */
- /* A compléter */
+@stop

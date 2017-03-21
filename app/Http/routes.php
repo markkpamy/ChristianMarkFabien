@@ -41,7 +41,7 @@ Route::get('supprimerOeuvre/{id}', 'OeuvreController@deleteOeuvre');
 // Afficher la liste des réservations
 
 // Réserver une oeuvre
-
+Route::get('/reserverOeuvre/{id}', 'AdherentController@reserverOeuvre');
 // Valider une réservation
 
 // Confirmer une réservation
