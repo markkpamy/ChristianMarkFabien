@@ -1,11 +1,10 @@
 @extends('layouts.master')
 @section('content') 
-{!! Form::open(['url' => 'reserverOeuvre', 'files' => true]) !!}
 <div class="col-md-12 well well-sm">
     <center><h1>{{$titreVue or ''}}</h1></center>
     <div class="form-horizontal">    
         <div class="form-group">
-            <input type="hidden" name="id_oeuvre" value=" /* A compléter */"/>
+            <input type="hidden" name="id_oeuvre" value=" {{$oeuvre->id_oeuvre or ''}} "/>
             <label class="col-md-3 control-label">Titre : </label>
             <label class="col-md-6 form-control-static"> /* A compléter */</label>            
         </div>
@@ -21,11 +20,8 @@
                 <select class='form-control' name='cbAdherent' required>
                     <OPTION VALUE=0>Sélectionner un adhérent</option>
                     @foreach ($adherents as $adherent)
-                        <option value="{{$adherent -> id_adherent}}"
-                                @if($adherent -> id_adherent > 0)
-                                    selected
-                                @endif
-                        >{{$adherent->prenom_adherent}} {{$adherent->nom_adherent}}</option>
+                        <option value="{{$adherent -> id_adherent}}">
+                            {{$adherent->prenom_adherent}} {{$adherent->nom_adherent}}</option>
                     @endforeach
                 </select>
             </div>
@@ -47,5 +43,4 @@
         </div>        
     </div>
 </div>
- /* A compléter */
 @stop

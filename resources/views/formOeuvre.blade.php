@@ -8,8 +8,7 @@
             <input type="hidden" name="id_oeuvre" value="{{$oeuvre->id_oeuvre or ''}}"/>
             <label class="col-md-3 control-label">Titre : </label>
             <div class="col-md-3">
-                <input type="text" name="titre"
-                    value="{{$oeuvre->Titre or ''}}" class="form-control" required autofocus>
+                <input type="text" name="titre" value="{{$oeuvre->titre or ''}}" class="form-control" required autofocus>
             </div>
         </div>
         <div class="form-group">
