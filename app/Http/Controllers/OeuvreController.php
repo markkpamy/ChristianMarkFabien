@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests;
 use App\modeles\Proprietaire;
 use Request;
 use App\modeles\Oeuvre;
-use Illuminate\Support\Facades\Session;
+
 
 class OeuvreController extends Controller
 {

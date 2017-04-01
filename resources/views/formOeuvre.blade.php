@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-    {!! Form::open(['url' => 'validerOeuvre', 'files' => true]) !!}
+{!! Form::open(['url' => 'validerOeuvre', 'files' => true]) !!}
 <div class="col-md-12 well well-sm">
     <center><h1>{{$titreVue or ''}}</h1></center>
     <div class="form-horizontal">    
