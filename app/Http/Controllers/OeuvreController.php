@@ -60,9 +60,7 @@ class OeuvreController extends Controller
         $titre_oeuvre = Request::input('titre');
         $proprietaire = Request::input('cbProprietaire');
         $prix = Request::input('prix');
-
         $oeuvre = new Oeuvre();
-
         try{
             if($id_oeuvre>0){
                 $oeuvre->updateOeuvre($id_oeuvre,$titre_oeuvre,$prix,$proprietaire);
@@ -72,10 +70,12 @@ class OeuvreController extends Controller
             }
         }catch (Exception $ex){
             $erreur = $ex->getMessage();
-            if($id_oeuvre>0)
+            if($id_oeuvre>0){
                 return $this->updateOeuvre($id_oeuvre, $erreur);
-            else
+            }
+            else{
                 return $this->addOeuvre($erreur);
+            }
         }
         //On reaffiche la listes des oeuvres
         return redirect('/listerOeuvres');
