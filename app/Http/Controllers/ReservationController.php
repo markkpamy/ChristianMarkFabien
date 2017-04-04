@@ -13,9 +13,8 @@ use Request;
 class ReservationController extends Controller
 {
         public function addReservation($id_oeuvre){
-      // $erreur = Session::get('erreur');
-      //  Session::forget('erreur');
-        
+        $erreur = Session::get('erreur');
+        Session::forget('erreur');
         $oeuvreReserver = new Oeuvre();
         $oeuvre = $oeuvreReserver ->getOeuvres($id_oeuvre);
         $adherent = new Adherent();
