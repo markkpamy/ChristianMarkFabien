@@ -12,16 +12,15 @@ use Request;
 
 class ReservationController extends Controller
 {
-        public function addReservation($id_oeuvre){
+        public function addReservation($titre){
         $erreur = Session::get('erreur');
         Session::forget('erreur');
-        $oeuvreReserver = new Oeuvre();
-        $oeuvre = $oeuvreReserver ->getOeuvres($id_oeuvre);
+        $titreOeuvre =$titre;
         $adherent = new Adherent();
         $adherents = $adherent->getAdherent();
         $titreVue = "Reserver une Oeuvre";
         //Affiche le formulaire en lui fournissant les données à afficher
-        return view('formReservation', compact('oeuvre', 'adherents', 'titreVue', 'erreur'));
+        return view('formReservation', compact('titreOeuvre', 'adherents', 'titreVue', 'erreur'));
     }
     
     public function validerReservation(){
@@ -39,5 +38,12 @@ class ReservationController extends Controller
         }
         //On reaffiche la listes des oeuvres
         return redirect('/listerOeuvres');
+    }
+    public function getReservation(){
+        $erreur = Session::get('erreur');
+        Session::forget('erreur');
+        $reservation = new Reservation();
+        $reservations = $reservation -> getReservation();
+        return view('listeReservations', compact('reservations', 'erreur'));
     }
 }
