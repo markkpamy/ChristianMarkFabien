@@ -41,7 +41,7 @@ Route::get('supprimerOeuvre/{id}', 'OeuvreController@deleteOeuvre');
 // Afficher la liste des réservations
 Route::get('/reservationOeuvre','ReservationController@getReservation');
 // Réserver une oeuvre
-Route::get('/addReservation/{titre}', 'ReservationController@addReservation');
+Route::get('/addReservation/{id}', 'ReservationController@addReservation');
 // Valider une réservation
 Route::post('/validerReservation', 'ReservationController@validerReservation');
 // Confirmer une réservation

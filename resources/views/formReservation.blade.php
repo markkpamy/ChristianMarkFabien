@@ -6,9 +6,9 @@
         <div class="form-horizontal">
             <div class="form-group">
 
-                <input type="hidden" name="id_oeuvre" value=" {{$titreOeuvre or ''}} "/>
+                <input type="hidden" name="id_oeuvre" value=" {{$oeuvre->titre or ''}} "/>
                 <label class="col-md-3 control-label">Titre : </label>
-                <label class="col-md-6 form-control-static">{{$titreOeuvre or ''}}</label>
+                <label class="col-md-6 form-control-static">{{$oeuvre->titre or ''}}</label>
 
             <!--<input type="hidden" name="id_oeuvre" value="{{$oeuvre->id_oeuvre or ''}} "/>
             <label class="col-md-3 control-label">Titre : </label>
