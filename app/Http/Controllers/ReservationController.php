@@ -25,7 +25,6 @@ class ReservationController extends Controller
     }
     
     public function validerReservation(){
-        
         $id_oeuvre = Request::input('id_oeuvre');
         $id_adherent = Request::input('cbAdherent');
         $date_reservation = Request::input('date_reservation');

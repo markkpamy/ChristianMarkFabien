@@ -10,12 +10,7 @@
                 <label class="col-md-3 control-label">Titre : </label>
                 <label class="col-md-6 form-control-static">{{$oeuvre->titre or ''}}</label>
 
-            <!--<input type="hidden" name="id_oeuvre" value="{{$oeuvre->id_oeuvre or ''}} "/>
-            <label class="col-md-3 control-label">Titre : </label>
-            <!--<label class="col-md-6 form-control-static"> {{$oeuvre->titre or ''}}</label>           -->
-            <!--<div class="col-md-3">
-                    <input type="text" name="titre" value="{{$oeuvre->titre or ''}}" class="form-control" autofocus>
-                </div>-->
+            <input type="hidden" name="id_oeuvre" value="{{$oeuvre->id_oeuvre or ''}} "/>
             </div>
             <div class="form-group">
                 <label class="col-md-3 control-label">Date réservation : </label>
