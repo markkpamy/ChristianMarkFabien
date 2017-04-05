@@ -2,7 +2,6 @@
 
 namespace App\modeles;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Session;
 use DB;
 
 class Oeuvre extends Model
@@ -62,10 +61,16 @@ class Oeuvre extends Model
      */
     public function addOeuvre($titre_oeuvre, $proprietaire_oeuvre, $prix){
         try{
+            $result = DB::table('oeuvre')
+                ->max('id_oeuvre');
+            $nombreId = $result+1;
+
             DB::table('oeuvre')->insert(
-                ['id_proprietaire'=> $proprietaire_oeuvre,
-                'titre' => $titre_oeuvre,
-                'prix' => $prix]
+                [   'id_proprietaire'=> $proprietaire_oeuvre,
+                    'id_oeuvre'=> $nombreId,
+                    'titre' => $titre_oeuvre,
+                    'prix' => $prix
+                ]
             );
         }catch (Exception $ex){
             throw $ex;
