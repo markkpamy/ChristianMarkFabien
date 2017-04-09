@@ -84,7 +84,8 @@ class Oeuvre extends Model
      */
     public function deleteOeuvre($idOeuvre){
         try{
-            DB::table('oeuvre')->where('id_oeuvre','=',$idOeuvre)
+            DB::table('oeuvre')
+                ->where('id_oeuvre','=',$idOeuvre)
                 ->delete();
         } catch (Exception $ex){
             throw $ex;

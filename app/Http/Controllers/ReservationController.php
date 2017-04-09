@@ -39,11 +39,12 @@ class ReservationController extends Controller
         //On reaffiche la listes des oeuvres
         return redirect('/listerOeuvres');
     }
-    public function getReservation(){
+
+    public function getReservations(){
         $erreur = Session::get('erreur');
         Session::forget('erreur');
         $reservation = new Reservation();
-        $reservations = $reservation -> getReservation();
+        $reservations = $reservation -> getReservations();
         return view('listeReservations', compact('reservations', 'erreur'));
     }
 }
