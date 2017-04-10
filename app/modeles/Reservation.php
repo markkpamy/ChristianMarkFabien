@@ -37,9 +37,17 @@ class Reservation extends Model
         return $reservations;
     }
 
-    public function getReservation($idOeuvre){
+    /**
+     * @param $idOeuvre
+     * @param $date
+     * @return Reservation à supprimer
+     */
+    public function getReservation($idOeuvre, $date){
         $reservation = DB::table('reservation')
-            ->where('id_oeuvre','=', $idOeuvre)
+            ->where([
+                ['id_oeuvre','=', $idOeuvre],
+                ['date_reservation','=', $date]
+            ])
             ->get();
         return $reservation;
     }
@@ -50,13 +58,12 @@ class Reservation extends Model
      * @param $idAdherent int id adherent
      * @throws \Exception
      */
-    public function deleteReservation($date, $idOeuvre, $idAdherent){
+    public function deleteReservation($idOeuvre,$date){
         try{
             DB::table('reservation')
                 ->where([
                     ['id_oeuvre','=',$idOeuvre],
-                    ['date_reservation','=', $date],
-                    ['id_adherent','=',$idAdherent]
+                    ['date_reservation','=', $date]
                     ])
                 ->delete();
         }catch (Exception $ex){

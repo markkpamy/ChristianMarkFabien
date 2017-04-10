@@ -12,7 +12,8 @@ use Request;
 
 class ReservationController extends Controller
 {
-        public function addReservation($idOeuvre){
+    public function addReservation($idOeuvre)
+    {
         $erreur = Session::get('erreur');
         Session::forget('erreur');
         $laOeuvre = new Oeuvre();
@@ -23,28 +24,41 @@ class ReservationController extends Controller
         //Affiche le formulaire en lui fournissant les données à afficher
         return view('formReservation', compact('oeuvre', 'adherents', 'titreVue', 'erreur'));
     }
-    
-    public function validerReservation(){
+
+    public function validerReservation()
+    {
         $id_oeuvre = Request::input('id_oeuvre');
         $id_adherent = Request::input('cbAdherent');
         $date_reservation = Request::input('date_reservation');
         $statut = "Attente";
         $reservation = new Reservation();
 
-        try{
+        try {
             $reservation->addReservation($id_oeuvre, $id_adherent, $date_reservation, $statut);
-        }catch (Exception $ex){
+        } catch (Exception $ex) {
             $erreur = $ex->getMessage();
         }
         //On reaffiche la listes des oeuvres
         return redirect('/listerOeuvres');
     }
 
-    public function getReservations(){
+    public function deleteReservation($id_oeuvre, $date)
+    {
+        $reservation = new Reservation();
+        try {
+            $reservation->deleteReservation($id_oeuvre, $date);
+        } catch (Exception $ex) {
+            $erreur = $ex->getMessage();
+        }
+        return redirect('/reservationOeuvre');
+    }
+
+    public function getReservations()
+    {
         $erreur = Session::get('erreur');
         Session::forget('erreur');
         $reservation = new Reservation();
-        $reservations = $reservation -> getReservations();
+        $reservations = $reservation->getReservations();
         return view('listeReservations', compact('reservations', 'erreur'));
     }
 }
