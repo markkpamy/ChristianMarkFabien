@@ -4,6 +4,7 @@ namespace App\modeles;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
+use DateTime;
 
 class Reservation extends Model
 {
@@ -17,10 +18,12 @@ class Reservation extends Model
      */
     public function addReservation($id_oeuvre, $id_adherent, $date_reservation, $statut){
         try{
+           $date = date_create($date_reservation);
             DB::table('reservation')->insert(
                 ['id_oeuvre'=> $id_oeuvre,
                 'id_adherent' => $id_adherent,
-                'date_reservation' => $date_reservation,
+                //'date_reservation' => DB::raw(date_format('$date_reservation', '%d/%m/%Y')),
+                    'date_reservation' => date_format($date, 'Y-m-d'),
                 'statut' => $statut]
             );
         } catch (Exception $ex){
