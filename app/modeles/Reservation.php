@@ -2,6 +2,9 @@
 
 namespace App\modeles;
 
+use DateInterval;
+use DateTime;
+use DateTimeZone;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
@@ -9,18 +12,21 @@ class Reservation extends Model
 {
     /**
      * Ajouter une reservation d'oeuvre
-     * @param type $id_oeuvre
-     * @param type $id_adherent
-     * @param type $date_reservation
-     * @param type $statut
+     * @param int $id_oeuvre
+     * @param int $id_adherent
+     * @param DateTime $date_reservation
+     * @param String $statut
      * @throws \App\modeles\Exception
      */
     public function addReservation($id_oeuvre, $id_adherent, $date_reservation, $statut){
+        date_default_timezone_set("Europe/Paris");
+        $time = date("h:i:sa");
+        $date = new DateTime($date_reservation. $time);
         try{
             DB::table('reservation')->insert(
                 ['id_oeuvre'=> $id_oeuvre,
                 'id_adherent' => $id_adherent,
-                'date_reservation' => $date_reservation,
+                'date_reservation' => $date,
                 'statut' => $statut]
             );
         } catch (Exception $ex){
@@ -70,4 +76,6 @@ class Reservation extends Model
             throw $ex;
         }
     }
+
+
 }
