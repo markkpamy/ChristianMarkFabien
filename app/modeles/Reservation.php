@@ -44,21 +44,27 @@ class Reservation extends Model
     }
     public function confirmerReservation($idOeuvre, $date){
         try{
-            if((DB::table('reservation')
+            /*
+            $tmp=DB::table('reservation')
                 ->Select('statut')
                 ->where([
                     ['id_oeuvre','=',$idOeuvre],
                     ['date_reservation','=', $date]
-                ])) != 'Confirmé'
-            ) {
-                $statut = "Confirmé";
+                ])
+                ->get();
+         //   if( $tmp != "Confirmée")*/
+            // {
+                $statut = "Confirmée";
                 DB::table('reservation')
                     ->where([
                         ['id_oeuvre', '=', $idOeuvre],
                         ['date_reservation', '=', $date]
                     ])
-                    ->insert(['statut' => $statut]);
-            }
+                    //->delete();
+                    ->update(['statut' => $statut])
+                    ;
+
+           // }
         }catch (Exception $ex){
             throw $ex;
         }

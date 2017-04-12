@@ -42,7 +42,8 @@ class Oeuvre extends Model
      */
     public function updateOeuvre($id_Oeuvre, $titre_Oeuvre, $prix, $proprietaire){
         try{
-            DB::table('oeuvre')->where('id_oeuvre','=',$id_Oeuvre)
+            DB::table('oeuvre')
+                ->where('id_oeuvre','=',$id_Oeuvre)
                 ->update(
                     ['titre' => $titre_Oeuvre,
                     'id_proprietaire' => $proprietaire,
