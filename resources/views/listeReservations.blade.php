@@ -20,7 +20,7 @@
                 <tr>
                     <td> {{$reservation->titre or ''}}</td>
                     <td>  {{$reservation->date_reservation or ''}} </td>
-                    <td>  {{$reservation->prenom_adherent or ''}}</td>
+                    <td>  {{$reservation->statut or ''}}</td>
                     <td>  {{$reservation->nom_adherent or ''}} </td>
                     <td>  {{$reservation->prenom_adherent or ''}} </td>
                     <td style="text-align:center;"><a href="">
