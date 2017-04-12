@@ -1,6 +1,22 @@
 @extends('layouts.master')
 @section('content')
     {!! Form::open(['url' => 'validerReservation', 'files' => true]) !!}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="Include/JS/jquery-ui-min.js"></script>
+
+
+        <script type="text/javascript" >
+            $(document).ready(function () {
+                $("#date_reservation").datepicker({
+                    dateFormat: 'dd-mm-yy'
+                });
+            });
+
+    </script>
+
     <div class="col-md-12 well well-sm">
         <center><h1>{{$titreVue or ''}}</h1></center>
         <div class="form-horizontal">
@@ -15,7 +31,8 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Date réservation : </label>
                 <div class="col-md-3">
-                    <input type="text" name="date_reservation" id="date_reservation" value="" class="form-control" placeholder="AAAA-MM-JJ" required/>
+                    <input type="text" name="date_reservation" id="date_reservation" value="" class="form-control" placeholder="JJ-MM-AAAA" required />
+                    <!--<input type="date" name="date_reservation" id="date_reservation" value="" class="form-control" placeholder="JJ-MM-AAAA" required/>-->
                 </div>
             </div>
             <div class="form-group">

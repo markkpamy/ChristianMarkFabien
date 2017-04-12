@@ -33,7 +33,7 @@ class Reservation extends Model
             throw $ex;
         }
     }
-    
+
     public function getReservations(){
         $reservations = DB::table('reservation')
             ->Select('reservation.id_oeuvre','date_reservation','adherent.nom_adherent','adherent.prenom_adherent', 'statut','titre')

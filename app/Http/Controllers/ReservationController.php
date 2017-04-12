@@ -49,6 +49,7 @@ class ReservationController extends Controller
         } catch (Exception $ex) {
             $erreur = $ex->getMessage();
         }
+
         //On reaffiche la listes des reservations
         return redirect('/reservationOeuvre');
     }

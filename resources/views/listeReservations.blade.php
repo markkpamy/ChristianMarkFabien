@@ -23,6 +23,7 @@
                     <td>  {{$reservation->statut or ''}}</td>
                     <td>  {{$reservation->nom_adherent or ''}} </td>
                     <td>  {{$reservation->prenom_adherent or ''}} </td>
+
                     <td style="text-align:center;"><a href="#" onclick="javascript:if (confirm('Confirmer la réservation ?'))
                                 { window.location='{{ url('/confirmerReservation') }}/{{ $reservation -> id_oeuvre }}/{{$reservation->date_reservation}}';}">
                             <span class="glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="top" title="Confirmer">
