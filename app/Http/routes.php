@@ -45,7 +45,7 @@ Route::get('/addReservation/{id}', 'ReservationController@addReservation');
 // Valider une réservation
 Route::post('/validerReservation', 'ReservationController@validerReservation');
 // Confirmer une réservation
-
+Route::get('/confirmerReservation/{id}/{oeuvre}', 'ReservationController@confirmerReservation');
 // Supprimer une réservation
 Route::get('/supprimerReservation/{id}/{oeuvre}', 'ReservationController@deleteReservation');
 

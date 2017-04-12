@@ -41,6 +41,17 @@ class ReservationController extends Controller
         //On reaffiche la listes des oeuvres
         return redirect('/listerOeuvres');
     }
+    public function confirmerReservation($id_oeuvre, $date)
+    {
+        $reservation = new Reservation();
+        try {
+            $reservation->confirmerReservation($id_oeuvre, $date);
+        } catch (Exception $ex) {
+            $erreur = $ex->getMessage();
+        }
+        //On reaffiche la listes des oeuvres
+        return redirect('/listerOeuvres');
+    }
 
     public function deleteReservation($id_oeuvre, $date)
     {
